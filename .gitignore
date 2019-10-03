@@ -1,0 +1,5 @@
+terraform-provider-stdlib*
+terraform.tfstate*
+*.tf
+.terraform
+crash.log

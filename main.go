@@ -1,11 +1,13 @@
 package main
 
 import (
-	"github.com/hashicorp/terraform-plugin-sdk/plugin"
-	"github.com/invidian/terraform-provider-stdlib/stdlib"
+	"github.com/hashicorp/terraform/plugin"
+
+	"github.com/invidian/terraform-provider-sshcommand/sshcommand"
 )
 
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
-		ProviderFunc: stdlib.Provider})
+		ProviderFunc: sshcommand.Provider,
+	})
 }

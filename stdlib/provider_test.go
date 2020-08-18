@@ -1,22 +1,15 @@
-package stdlib
+package stdlib_test
 
 import (
 	"testing"
 
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
-	"github.com/hashicorp/terraform-plugin-sdk/terraform"
+
+	"github.com/invidian/terraform-provider-stdlib/stdlib"
 )
 
-var testProviders map[string]terraform.ResourceProvider
-
-func init() {
-	testProviders = map[string]terraform.ResourceProvider{
-		"stdlib": Provider(),
-	}
-}
-
 func TestProvider(t *testing.T) {
-	if err := Provider().(*schema.Provider).InternalValidate(); err != nil {
-		t.Fatalf("err: %s", err)
+	if err := stdlib.Provider().(*schema.Provider).InternalValidate(); err != nil {
+		t.Fatalf("internal validation: %v", err)
 	}
 }
